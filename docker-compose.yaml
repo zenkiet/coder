@@ -5,7 +5,7 @@ services:
     # other automations.
     image: ghcr.io/coder/coder:${CODER_VERSION:-latest}
     ports:
-      - "7080:7080"
+      - "${PORT:-7080}:7080"
     environment:
       CODER_PG_CONNECTION_URL: "postgresql://${POSTGRES_USER:-username}:${POSTGRES_PASSWORD:-password}@database/${POSTGRES_DB:-coder}?sslmode=disable"
       CODER_HTTP_ADDRESS: "0.0.0.0:7080"
